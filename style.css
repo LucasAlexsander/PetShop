@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=JetBrains+Mono:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+/* Banner CSS */
+.banner {
+    height: 100vh;
+    background: url(banner.svg);
+    padding: 80px 80px 0 80px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    transform: translateX(-100%);
+    transition: transform .5s linear;
+    animation: animationBanner .3s 3 alternate .5s;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, .51);
+    user-select: none;
+}
+.banner .text-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner .text-area p {
+    font-family: 'IBM Plex Serif', serif;
+    color: #fff;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.banner .text-area p span {
+    font-size: 28px;
+}
+.banner .footer-banner {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    width: 100%;
+    text-align: end;
+    margin-top: 25px;
+}
+/* Forms CSS */
+.area-cadastrar {
+    width: 100%;
+    height: 100vh;
+    padding-left: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'JetBrains Mono', monospace;    
+    font-weight: 400;
+    transform: translateY(-100%);
+    transition: transform .5s linear .2s;
+}
+.area-cadastrar h1 {
+    font-size: 42px;
+    margin-bottom: 43px;
+}
+.area-cadastrar form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 34px;
+    cursor: text;
+    position: relative;
+}
+.area-cadastrar form label p {
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    transition: top .2s linear;
+    opacity: .7;
+}
+.area-cadastrar form input {
+    position: relative;
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .31);
+    font-size: 18px;
+    outline: none;
+    padding-left: 5px;
+}
+.area-cadastrar form input:focus ~ p {
+    top: -16px;
+}
+.area-cadastrar form input:not(:placeholder-shown) ~ p {
+    top: -16px;
+}
+.area-cadastrar input[type='submit'] {    
+    width: 500px;
+    height: 40px;
+    background: url(banner.svg);
+    border: 0;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1.6px;
+    cursor: pointer;
+}
+.area-cadastrar input[type='submit']:hover {
+    background: linear-gradient(0deg, rgba(46, 99, 202, .5) 100%, rgba(46, 99, 202, .5) 100%),
+     url(banner.svg);
+}
+.area-cadastrar .login {
+    width: 500px;
+    margin-top: 29px;
+    text-align: center;
+    font-size: 12px;
+}
+.area-cadastrar .login a {
+    text-decoration: none;
+    color: #1839E4;
+}
+.area-cadastrar form label p.campo-vazio {
+    position: absolute;
+    color: #f00;
+    font-size: 12px;
+    top: 43px;
+    display: none;
+}
+footer {
+    user-select: none;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0.32;
+    font-family: 'JetBrains Mono', monospace;    
+    font-weight: 400;
+    transform: translateY(100%);
+    transition: transform .5s linear;   
+}
+footer span {
+    font-style: italic;
+}
+@keyframes animationBanner {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
